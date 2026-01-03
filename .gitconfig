@@ -1,0 +1,9 @@
+[user]
+	name = RO-HIT17
+	email = 138398459+RO-HIT17@users.noreply.github.com
+[core]
+	editor = code --wait
+[init]
+	defaultBranch = main
+[url "git@github.com:"]
+	insteadOf = https://github.com/
