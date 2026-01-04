@@ -113,5 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# fnm (Node.js)
+eval "$(fnm env --use-on-cd)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
