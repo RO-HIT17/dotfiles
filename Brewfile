@@ -1,13 +1,43 @@
+# Console Matrix
+brew "cmatrix"
+# Apjanke's fork of the classic cowsay project
+brew "cowsay"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
 # Fast and simple Node.js version manager
 brew "fnm"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Fast, highly customisable system info script
+brew "neofetch"
 # Python version management
 brew "pyenv"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-vscode "command is only available in wsl or inside a visual studio code terminal."
+# Translate common Internet acronyms
+brew "wtf"
+vscode "charliermarsh.ruff"
+vscode "dbaeumer.vscode-eslint"
+vscode "editorconfig.editorconfig"
+vscode "esbenp.prettier-vscode"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "google.geminicodeassist"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode.vscode-typescript-next"
+vscode "redhat.vscode-yaml"
+vscode "tamasfe.even-better-toml"
