@@ -119,14 +119,14 @@ eval "$(fnm env --use-on-cd)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-autoload -Uz add-zsh-hook
+# autoload -Uz add-zsh-hook
 
-dragon_once() {
-  command -v fortune >/dev/null 2>&1 || return
-  command -v cowsay  >/dev/null 2>&1 || return
+# dragon_once() {
+#   command -v fortune >/dev/null 2>&1 || return
+#   command -v cowsay  >/dev/null 2>&1 || return
 
-  fortune | cowsay -f dragon
-  add-zsh-hook -d precmd dragon_once
-}
+#   fortune | cowsay -f dragon
+#   add-zsh-hook -d precmd dragon_once
+# }
 
-add-zsh-hook precmd dragon_once
+#add-zsh-hook precmd dragon_once
