@@ -130,3 +130,6 @@ eval "$(fnm env --use-on-cd)"
 # }
 
 #add-zsh-hook precmd dragon_once
+
+# Created by `pipx` on 2026-01-08 20:29:22
+export PATH="$PATH:/home/rohit/.local/bin"
