@@ -1,5 +1,7 @@
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Console Matrix
 brew "cmatrix"
 # Apjanke's fork of the classic cowsay project
@@ -22,6 +24,8 @@ brew "gh"
 brew "navi"
 # Fast, highly customisable system info script
 brew "neofetch"
+# Command-line tool to generate, analyze, convert and manipulate colors
+brew "pastel"
 # Python version management
 brew "pyenv"
 # Search tool like grep and The Silver Searcher
@@ -30,6 +34,8 @@ brew "ripgrep"
 brew "sl"
 # Modern and pretty fancy file manager for the terminal
 brew "superfile"
+# Programmatically correct mistyped console commands
+brew "thefuck"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver, written in Rust
