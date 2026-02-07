@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
-plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd z fzf)
+plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd z)
 
 source $ZSH/oh-my-zsh.sh
 
