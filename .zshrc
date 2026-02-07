@@ -232,6 +232,14 @@ _atuin_up_search_viins() {
     _atuin_up_search --keymap-mode=vim-insert
 }
 
+setopt globdots
+_comp_options+=(globdots)
+
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
+
+
 add-zsh-hook preexec _atuin_preexec
 add-zsh-hook precmd _atuin_precmd
 
@@ -267,13 +275,11 @@ bindkey -M menuselect 'j' down-line-or-history
 bindkey -M menuselect 'k' up-line-or-history
 
 alias ls="eza --long --icons=always --no-filesize --no-user --no-time --no-permissions --color=always --all"
-setopt globdots
 
-# Ctrl + G → fuzzy cd
 fzf-cd-widget() {
   local dir
-  dir=$(fd --type d --hidden --follow --exclude .git . ~ | fzf \
-    --preview 'eza --tree --color=always {} | head -200')
+  dir=$(fd --type d --hidden --follow --exclude .git . . | fzf \
+    --preview 'eza --tree --color=always --all {} | head -200')
   [[ -n "$dir" ]] && cd "$dir"
 }
 zle -N fzf-cd-widget
@@ -296,9 +302,13 @@ _fzf_comprun() {
   shift
 
   case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200 --hidden' "$@" ;;
-    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+    cd)
+      fzf --preview 'eza --tree --all --color=always {} | head -200' "$@" ;;
+    export|unset)
+      fzf --preview "eval 'echo ${}'" "$@" ;;
+    ssh)
+      fzf --preview 'dig {}' "$@" ;;
+    *)
+      fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
