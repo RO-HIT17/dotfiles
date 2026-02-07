@@ -4,6 +4,8 @@ brew "atuin"
 brew "cmatrix"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
+# Modern, maintained replacement for ls
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Banner-like program prints strings as ASCII art
@@ -16,6 +18,8 @@ brew "fortune"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Interactive cheatsheet tool for the command-line
+brew "navi"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Python version management
@@ -24,6 +28,8 @@ brew "pyenv"
 brew "ripgrep"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
+# Modern and pretty fancy file manager for the terminal
+brew "superfile"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -34,7 +40,6 @@ vscode "charliermarsh.ruff"
 vscode "dbaeumer.vscode-eslint"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
-vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.vscode-pull-request-github"
 vscode "google.geminicodeassist"
