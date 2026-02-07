@@ -256,3 +256,8 @@ bindkey -M emacs '^[OA' atuin-up-search
 bindkey -M vicmd '^[OA' atuin-up-search-vicmd
 bindkey -M viins '^[OA' atuin-up-search-viins
 bindkey -M vicmd 'k' atuin-up-search-vicmd
+
+
+alias ls="eza --long --icons=always --no-filesize --no-user --no-time --no-permissions --color=always"
+alias ga="git add ."
+alias gcm="git commit -m"
