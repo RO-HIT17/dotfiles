@@ -177,7 +177,7 @@ bindkey -M vicmd 'k' atuin-up-search-vicmd
 
 # FZF bindings
 bindkey '^G' fzf-cd-widget
-bindkey '^I' fzf-completion
+
 
 # Menu select bindings (hjkl navigation)
 bindkey -M menuselect 'h' backward-char
