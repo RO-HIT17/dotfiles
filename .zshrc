@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd z)
+plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd z fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -257,8 +257,31 @@ bindkey -M vicmd '^[OA' atuin-up-search-vicmd
 bindkey -M viins '^[OA' atuin-up-search-viins
 bindkey -M vicmd 'k' atuin-up-search-vicmd
 
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Use hjkl in completion menu
+bindkey -M menuselect 'h' backward-char
+bindkey -M menuselect 'l' forward-char
+bindkey -M menuselect 'j' down-line-or-history
+bindkey -M menuselect 'k' up-line-or-history
 
 alias ls="eza --long --icons=always --no-filesize --no-user --no-time --no-permissions --color=always --all"
+setopt globdots
+
+# Ctrl + G → fuzzy cd
+fzf-cd-widget() {
+  local dir
+  dir=$(fd --type d --hidden --follow --exclude .git . ~ | fzf \
+    --preview 'eza --tree --color=always {} | head -200')
+  [[ -n "$dir" ]] && cd "$dir"
+}
+zle -N fzf-cd-widget
+bindkey '^G' fzf-cd-widget
+
+
+# Use fzf for tab completion
+bindkey '^I' fzf-completion
 
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
@@ -273,7 +296,7 @@ _fzf_comprun() {
   shift
 
   case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200 --hidden' "$@" ;;
     export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
