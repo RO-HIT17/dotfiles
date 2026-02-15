@@ -191,7 +191,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # ============================================================================
 # ALIASES
 # ============================================================================
-alias ls="eza --long --icons=always --no-filesize --no-user --no-time --no-permissions --color=always --all"
+alias ls="eza --icons=always --grid --width=2 --no-filesize --no-user --no-time --no-permissions --color=always --all"
+alias zzz="cd --"
+alias zz="cd -"
 
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
