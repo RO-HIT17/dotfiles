@@ -197,3 +197,5 @@ alias zz="cd -"
 
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+export PATH="/home/linuxbrew/.linuxbrew/opt/php/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/opt/php/sbin:$PATH"
